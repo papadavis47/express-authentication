@@ -16,19 +16,19 @@
   </head>
   <body>
     <div class="container">
-      <h1>Authentication</h1>
-      <% include partials/alerts %>
       <header>
         <nav>
           <% if (currentUser) { %>
             <a href="/auth/logout">Logout</a>
             <a href="/profile">Profile</a>
             <%}else {%>
-          <a href="/auth/signup">Signup</a>
-          <a href="/auth/login">Login</a>
-          <%}%>
-        </nav>
-      </header class="container">
+              <a href="/auth/signup">Signup</a>
+              <a href="/auth/login">Login</a>
+              <%}%>
+            </nav>
+            <h1>Authentication</h1>
+            <% include partials/alerts %>
+          </header class="container">
       
       <%- body %>
     </div>
