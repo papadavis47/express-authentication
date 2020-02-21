@@ -12,21 +12,27 @@
       integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="/auth/signup">Signup</a>
-        <a href="/auth/login">Login</a>
-        <a href="/auth/logout">Logout</a>
-        <a href="/profile">Profile</a>
-      </nav>
-    </header>
     <div class="container">
       <h1>Authentication</h1>
+      <% include partials/alerts %>
+      <header>
+        <nav>
+          <% if (currentUser) { %>
+            <a href="/auth/logout">Logout</a>
+            <a href="/profile">Profile</a>
+            <%}else {%>
+          <a href="/auth/signup">Signup</a>
+          <a href="/auth/login">Login</a>
+          <%}%>
+        </nav>
+      </header class="container">
+      
       <%- body %>
     </div>
-
+    
     <script src="//code.jquery.com/jquery.js"></script>
     <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
@@ -34,4 +40,5 @@
       crossorigin="anonymous"
     ></script>
   </body>
-</html>
+  </html>
+  
