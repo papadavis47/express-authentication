@@ -23,12 +23,12 @@ router.post('/signup', (req, res) => {
         successFlash: 'Thanks for signing up!'
       })(req, res);
     } else {
-      console.log('email already exists')
+      console.log('Email already exists')
       req.flash('error', 'Email already exists')
       res.redirect('/auth/signup')
     }
   }).catch(err => {
-    console.log('error occured finding or creating user');
+    console.log('Error occured finding or creating user');
     console.log(err);
     req.flash('error', err.message);
     res.redirect('/auth/signup');
